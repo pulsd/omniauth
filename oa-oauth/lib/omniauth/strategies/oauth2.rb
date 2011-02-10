@@ -49,7 +49,9 @@ module OmniAuth
       end
       
       def callback_url
-        full_host + callback_path
+        result = full_host + callback_path + "?red=normal"
+        logger.info "#{result}"
+        return result
       end
 
       protected
